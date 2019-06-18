@@ -13,6 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
+		 \App\Models\Appinstall::class => \App\Policies\AppinstallPolicy::class,
 		 \App\Models\Useinfo::class => \App\Policies\UseinfoPolicy::class,
         // 'App\Model' => 'App\Policies\ModelPolicy',
     ];
