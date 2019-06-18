@@ -13,11 +13,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
         if (app()->environment() == 'local' || app()->environment() == 'testing') {
-
             $this->app->register(\Summerblue\Generator\GeneratorsServiceProvider::class);
-    
         }
     }
 
@@ -28,10 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
 	{
-		\App\Models\User::observe(\App\Observers\UserObserver::class);
-		\App\Models\Userinfo::observe(\App\Observers\UserinfoObserver::class);
-
-        //
         \Carbon\Carbon::setLocale('zh');
     }
 }
